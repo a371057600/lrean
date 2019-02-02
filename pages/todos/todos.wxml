@@ -1,0 +1,22 @@
+<!--pages/todos/todos.wxml-->
+
+<view class="container">
+    <view class="new">
+        <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549057920164&di=603f14d183ddef673cbc2b554dabcf15&imgtype=0&src=http%3A%2F%2Fimg.51test.net%2Fuploadfile%2Fimages%2F2018%2F0411%2F15234194104601835.jpg" bindtap="addTodohandler"   ></image>
+        <input type="text" placeholder="Anything here...." value="{{search}}" bindinput="inputChangeHandler"/>
+    </view>
+    <view class="todos">
+        <view class="item{{ item.completed ? ' completed' : ''}}" wx:for="{{todos}}" bindtap="toggleTodoHandle" data-index="{{index}}">
+            <icon type="{{item.completed ? 'success':'circle'}}"></icon>
+            <text>{{item.name}}</text>
+            <icon type="cancel" size="16"></icon>
+        </view>
+
+    </view>
+    <view class="footer">
+        <text>Toggle all</text>
+       <text wx:if="{{ leftCount }}">{{ leftCount }}{{ leftCount > 1 ? 'items' :'item'}} left</text>
+        <text>Clear complete</text>
+
+    </view>
+</view>
