@@ -1,3 +1,0 @@
-<!--pages/news/news.wxml-->
-<text>pages/news/news.wxml</text>
-<button type='primary' bindtap='tapHandle'>跳转过去</button>
